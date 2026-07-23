@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jane Doe — Technical Writer</title>
+  <meta name="description" content="Portfolio of Jane Doe, technical writer specializing in developer documentation, API references, and user guides.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <header class="sidebar__identity">
+      <h1 class="sidebar__name">Jane Doe</h1>
+      <p class="sidebar__role">Technical Writer</p>
+    </header>
+
+    <nav class="sidebar__nav" aria-label="Section navigation">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#resume">Resume &amp; Experience</a></li>
+        <li><a href="#samples">Technical Writing Samples</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <footer class="sidebar__footer">
+      <p>Based in Portland, OR</p>
+      <p>Available for contract work</p>
+    </footer>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="content">
+
+    <!-- ---- About ---- -->
+    <section id="about" class="section">
+      <p class="section__eyebrow">01 — Introduction</p>
+      <h2 class="section__title">About Me</h2>
+
+      <p class="lede">
+        I write documentation that helps engineers ship faster — API references,
+        SDK guides, onboarding tutorials, and the internal docs nobody else wants
+        to own.
+      </p>
+
+      <p>
+        Over the past eight years I've worked across developer tools, fintech, and
+        infrastructure, translating complex systems into prose that respects the
+        reader's time. My approach starts with the task a person is trying to
+        complete, not the feature a team happens to have built.
+      </p>
+
+      <p>
+        I'm comfortable reading source code, running the product myself, and
+        interviewing the engineers who built it. Docs are a product surface, and I
+        treat them with the same rigor: tested examples, versioned content, and
+        feedback loops that catch drift before users do.
+      </p>
+
+      <h3 class="subhead">What I work with</h3>
+      <ul class="tag-list">
+        <li>Markdown &amp; MDX</li>
+        <li>Docs-as-code</li>
+        <li>Git &amp; GitHub</li>
+        <li>OpenAPI</li>
+        <li>Sphinx</li>
+        <li>Docusaurus</li>
+        <li>DITA</li>
+        <li>Figma</li>
+        <li>Python</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+    <!-- ---- Resume ---- -->
+    <section id="resume" class="section">
+      <p class="section__eyebrow">02 — Background</p>
+      <h2 class="section__title">Resume &amp; Experience</h2>
+
+      <p class="lede">
+        A summary of my roles and responsibilities.
+        <a class="inline-link" href="resume.pdf">Download the full resume (PDF)</a>.
+      </p>
+
+      <h3 class="subhead">Experience</h3>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <p class="timeline__date">2022 — Present</p>
+          <h4 class="timeline__role">Senior Technical Writer</h4>
+          <p class="timeline__org">Northwind Systems</p>
+          <ul class="timeline__points">
+            <li>Own the public developer documentation for a platform serving 40,000+ monthly developers.</li>
+            <li>Rebuilt the API reference on an OpenAPI-driven pipeline, cutting update lag from weeks to hours.</li>
+            <li>Established a docs style guide and review process now used by four product teams.</li>
+          </ul>
+        </li>
+
+        <li class="timeline__item">
+          <p class="timeline__date">2019 — 2022</p>
+          <h4 class="timeline__role">Technical Writer</h4>
+          <p class="timeline__org">Cascade Labs</p>
+          <ul class="timeline__points">
+            <li>Authored SDK guides and tutorials for three client libraries (Python, Go, JavaScript).</li>
+            <li>Ran a documentation audit that retired 200+ stale pages and reduced support tickets by 18%.</li>
+            <li>Partnered with support to turn recurring tickets into a troubleshooting knowledge base.</li>
+          </ul>
+        </li>
+
+        <li class="timeline__item">
+          <p class="timeline__date">2017 — 2019</p>
+          <h4 class="timeline__role">Documentation Specialist</h4>
+          <p class="timeline__org">Meridian Software</p>
+          <ul class="timeline__points">
+            <li>Migrated a legacy help center into a docs-as-code workflow on Git.</li>
+            <li>Wrote release notes and internal runbooks for a 60-person engineering org.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3 class="subhead">Education</h3>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <p class="timeline__date">2013 — 2017</p>
+          <h4 class="timeline__role">B.A., English &amp; Computer Science</h4>
+          <p class="timeline__org">University of Oregon</p>
+        </li>
+      </ol>
+
+      <h3 class="subhead">Certifications</h3>
+      <ul class="plain-list">
+        <li>Google Technical Writing One &amp; Two</li>
+        <li>Certified Professional Technical Communicator (CPTC), Foundation</li>
+      </ul>
+    </section>
+
+    <!-- ---- Samples ---- -->
+    <section id="samples" class="section">
+      <p class="section__eyebrow">03 — Selected Work</p>
+      <h2 class="section__title">Technical Writing Samples</h2>
+
+      <p class="lede">
+        A cross-section of the formats I work in. Each entry notes the audience and
+        the problem the document was written to solve.
+      </p>
+
+      <ul class="samples">
+        <li class="sample">
+          <p class="sample__type">API Reference</p>
+          <h3 class="sample__title"><a href="#samples">Payments API — Endpoint Reference</a></h3>
+          <p class="sample__summary">
+            A complete reference for a REST payments API, generated from OpenAPI and
+            hand-edited for clarity. Includes request/response examples in four
+            languages and a full error-code table.
+          </p>
+          <p class="sample__meta">Audience: backend engineers · 40 pages · Docusaurus</p>
+        </li>
+
+        <li class="sample">
+          <p class="sample__type">Tutorial</p>
+          <h3 class="sample__title"><a href="#samples">Getting Started with the Go SDK</a></h3>
+          <p class="sample__summary">
+            A 20-minute quickstart taking a developer from install to first
+            successful call, with every snippet tested in CI so examples never rot.
+          </p>
+          <p class="sample__meta">Audience: new users · 8 pages · Markdown</p>
+        </li>
+
+        <li class="sample">
+          <p class="sample__type">Conceptual Guide</p>
+          <h3 class="sample__title"><a href="#samples">How Replication Works</a></h3>
+          <p class="sample__summary">
+            An explainer covering the consistency model of a distributed datastore,
+            written with the engineering team and illustrated with sequence diagrams.
+          </p>
+          <p class="sample__meta">Audience: platform engineers · 12 pages · Sphinx</p>
+        </li>
+
+        <li class="sample">
+          <p class="sample__type">User Guide</p>
+          <h3 class="sample__title"><a href="#samples">Admin Console Handbook</a></h3>
+          <p class="sample__summary">
+            Task-based documentation for non-technical administrators, covering user
+            provisioning, permissions, and audit logs.
+          </p>
+          <p class="sample__meta">Audience: IT administrators · 30 pages · DITA</p>
+        </li>
+
+        <li class="sample">
+          <p class="sample__type">Release Notes</p>
+          <h3 class="sample__title"><a href="#samples">Platform 4.0 Migration Notes</a></h3>
+          <p class="sample__summary">
+            Breaking-change documentation for a major version bump, including a
+            step-by-step upgrade path and a deprecation timeline.
+          </p>
+          <p class="sample__meta">Audience: existing customers · 6 pages · Markdown</p>
+        </li>
+
+        <li class="sample">
+          <p class="sample__type">Internal Process</p>
+          <h3 class="sample__title"><a href="#samples">Documentation Style Guide</a></h3>
+          <p class="sample__summary">
+            The voice, tone, and formatting standard adopted across four product
+            teams, with a linting configuration that enforces the mechanical rules.
+          </p>
+          <p class="sample__meta">Audience: engineers &amp; writers · 15 pages · Markdown</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ---- Contact ---- -->
+    <section id="contact" class="section">
+      <p class="section__eyebrow">04 — Get in Touch</p>
+      <h2 class="section__title">Contact</h2>
+
+      <p class="lede">
+        I'm open to contract documentation projects, docs audits, and full-time
+        roles. The fastest way to reach me is email.
+      </p>
+
+      <dl class="contact-list">
+        <dt>Email</dt>
+        <dd><a href="mailto:hello@example.com">hello@example.com</a></dd>
+
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/">linkedin.com/in/janedoe</a></dd>
+
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/">github.com/janedoe</a></dd>
+
+        <dt>Location</dt>
+        <dd>Portland, Oregon — remote friendly</dd>
+      </dl>
+
+      <p class="note">
+        For writing samples under NDA, ask and I'll share a redacted version.
+      </p>
+
+      <footer class="page-footer">
+        <p>&copy; 2026 Jane Doe. Built with HTML and CSS.</p>
+      </footer>
+    </section>
+
+  </main>
+
+</body>
+</html>
