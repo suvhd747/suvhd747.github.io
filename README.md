@@ -47,6 +47,28 @@ Search for these placeholders and replace them everywhere they appear:
 If the sample lives elsewhere (a company docs site, a PDF), just point the link at that URL
 instead of creating a page.
 
+### Adding PDFs and other files
+
+There is no upload step. Commit a file to `assets/` and it is served at the matching URL —
+`assets/resume.pdf` becomes `https://<username>.github.io/assets/resume.pdf`.
+
+```html
+<!-- Preview in a new tab (what this template does) -->
+<a href="assets/resume.pdf" target="_blank" rel="noopener">Read the full resume (PDF)</a>
+
+<!-- Force a save instead, optionally renaming the file -->
+<a href="assets/resume.pdf" download="Your-Name-Resume.pdf">Download resume</a>
+```
+
+Watch out for:
+
+- **Relative paths.** `assets/resume.pdf` from `index.html`, `../assets/resume.pdf` from `samples/`.
+- **Case-sensitive URLs.** Use lowercase-with-hyphens names and no spaces.
+- **Git LFS does not work here.** Pages serves the LFS pointer file, so the download arrives
+  broken. Commit files normally; keep them well under GitHub's 100MB limit.
+- **A public repo is public,** including unlinked files, and git history keeps them after
+  deletion. Check that samples are cleared for publication before committing.
+
 ### Theming
 
 Every color and key dimension is a CSS custom property at the top of `css/style.css`:
