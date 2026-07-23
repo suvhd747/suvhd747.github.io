@@ -5,15 +5,22 @@
    ========================================================================== */
 
 /* 1. Tokens ---------------------------------------------------------------
-   Change these six values and the whole site re-themes.                    */
+   Change these values and the whole site re-themes. The --sidebar-* tokens
+   colour the sidebar block on its own, so it can differ from the content.  */
 
 :root {
   --bg:            #ffffff;
-  --bg-soft:       #f6f7f9;
-  --text:          #16181d;
-  --text-muted:    #5c6370;
-  --border:        #e3e6ea;
+  --bg-soft:       #f7f5f0;
+  --text:          #1a1a17;
+  --text-muted:    #5d5c55;
+  --border:        #e6e1d8;
   --accent:        #1f5f3f;  /* forest green — try #14532d deeper, #2c6e49 brighter */
+
+  /* Sidebar is its own colour block, independent of the content surfaces. */
+  --sidebar-bg:     #efeae0;  /* off-white cream — try #f2eee6 lighter, #eee8dc deeper */
+  --sidebar-text:   var(--text);
+  --sidebar-muted:  var(--text-muted);
+  --sidebar-border: #ded7c9;
 
   --sidebar-width: 17.5rem;
   --content-max:   46rem;
@@ -28,11 +35,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg:         #101215;
-    --bg-soft:    #171a1f;
-    --text:       #e8eaed;
-    --text-muted: #9aa1ab;
-    --border:     #262a31;
+    --bg-soft:    #17191c;
+    --text:       #e9e8e3;
+    --text-muted: #9d9c95;
+    --border:     #282a2c;
     --accent:     #86c39d;  /* lightened green — forest green is too dark on a dark bg */
+
+    /* Dark mode keeps a dark sidebar; a cream block here would glare. */
+    --sidebar-bg:     #191b1d;
+    --sidebar-border: #2c2f31;
   }
 }
 
@@ -117,8 +128,9 @@ code {
 /* 4. Sidebar -------------------------------------------------------------- */
 
 .sidebar {
-  border-right: 1px solid var(--border);
-  background: var(--bg-soft);
+  border-right: 1px solid var(--sidebar-border);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
 }
 
 .sidebar-inner {
@@ -155,7 +167,7 @@ code {
 
 .role {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--sidebar-muted);
   line-height: 1.45;
 }
 
@@ -177,13 +189,13 @@ code {
   border-radius: 7px;
   font-size: 0.94rem;
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--sidebar-muted);
   transition: background 0.15s ease, color 0.15s ease;
 }
 
 .nav a:hover {
-  background: color-mix(in srgb, var(--accent) 9%, transparent);
-  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--sidebar-text);
 }
 
 .nav-num {
@@ -199,9 +211,9 @@ code {
   flex-wrap: wrap;
   gap: 0.4rem 1rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--sidebar-border);
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: var(--sidebar-muted);
 }
 
 .social a { text-decoration: none; }
@@ -608,7 +620,7 @@ th {
 @media (max-width: 60rem) {
   .layout { grid-template-columns: 1fr; }
 
-  .sidebar { border-right: 0; border-bottom: 1px solid var(--border); }
+  .sidebar { border-right: 0; border-bottom: 1px solid var(--sidebar-border); }
 
   .sidebar-inner {
     position: static;
@@ -627,7 +639,12 @@ th {
   }
 
   .nav li + li { margin-top: 0; }
-  .nav a { padding: 0.4rem 0.75rem; margin-left: 0; background: var(--bg); border: 1px solid var(--border); }
+  .nav a {
+    padding: 0.4rem 0.75rem;
+    margin-left: 0;
+    background: var(--bg);
+    border: 1px solid var(--sidebar-border);
+  }
   .nav-num { display: none; }
 
   .social { margin-top: 0; }

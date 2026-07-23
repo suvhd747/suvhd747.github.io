@@ -53,16 +53,24 @@ Every color and key dimension is a CSS custom property at the top of `css/style.
 
 ```css
 :root {
-  --accent: #1f5f3f;   /* forest green — links, badges, timeline dots */
-  --bg: #ffffff;
-  --text: #16181d;
+  --accent: #1f5f3f;       /* forest green — links, badges, timeline dots */
+  --bg: #ffffff;           /* content background */
+  --bg-soft: #f7f5f0;      /* cards, code blocks, callouts */
+  --text: #1a1a17;
+  --sidebar-bg: #efeae0;   /* cream sidebar block */
+  --sidebar-border: #ded7c9;
   --sidebar-width: 17.5rem;
   --content-max: 46rem;
 }
 ```
 
-Change `--accent` and the whole site re-themes. A dark palette is already defined under
-`@media (prefers-color-scheme: dark)` and follows the visitor's system setting.
+Change `--accent` and the whole site re-themes. The `--sidebar-*` tokens color the sidebar
+independently, so you can make it a bold block without touching the content area — set
+`--sidebar-bg` to your accent and `--sidebar-text` / `--sidebar-muted` to a light color for an
+inverted sidebar.
+
+A dark palette is defined under `@media (prefers-color-scheme: dark)` and follows the visitor's
+system setting. It keeps a dark sidebar on purpose — a cream block would glare in dark mode.
 
 ## Included behavior
 
