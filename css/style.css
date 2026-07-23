@@ -247,6 +247,12 @@ code {
   margin-bottom: 1.5rem;
 }
 
+/* An intro line reads as a subtitle, so it sits tight under the heading and
+   carries the gap before the content below it instead. */
+.section-title:has(+ .section-intro) { margin-bottom: 0.5rem; }
+
+.section-intro { margin-bottom: 2.5rem; }
+
 .section-intro,
 .prose p {
   color: var(--text-muted);
