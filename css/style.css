@@ -13,7 +13,7 @@
   --text:          #16181d;
   --text-muted:    #5c6370;
   --border:        #e3e6ea;
-  --accent:        #1e3a6e;  /* navy — try #16325c deeper, #233f76 softer */
+  --accent:        #1f5f3f;  /* forest green — try #14532d deeper, #2c6e49 brighter */
 
   --sidebar-width: 17.5rem;
   --content-max:   46rem;
@@ -32,7 +32,7 @@
     --text:       #e8eaed;
     --text-muted: #9aa1ab;
     --border:     #262a31;
-    --accent:     #8fa9d6;  /* lightened navy — true navy is unreadable on a dark bg */
+    --accent:     #86c39d;  /* lightened green — forest green is too dark on a dark bg */
   }
 }
 

@@ -53,7 +53,7 @@ Every color and key dimension is a CSS custom property at the top of `css/style.
 
 ```css
 :root {
-  --accent: #1e3a6e;   /* navy — links, badges, timeline dots */
+  --accent: #1f5f3f;   /* forest green — links, badges, timeline dots */
   --bg: #ffffff;
   --text: #16181d;
   --sidebar-width: 17.5rem;
