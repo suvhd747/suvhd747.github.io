@@ -1,56 +1,79 @@
 # Technical Writing Portfolio
 
-A minimal, single-page portfolio template built with plain HTML5 and CSS. No
-JavaScript, no build step, no dependencies.
+A minimal, modern portfolio template built with plain HTML5 and CSS — no JavaScript, no build
+step, no dependencies. Designed for GitHub Pages.
 
-## Files
+## Structure
 
 ```
-index.html        All content and markup
-css/style.css     All styling
+.
+├── index.html                  # Single page: About, Resume, Samples, Contact
+├── css/style.css               # All styling (design tokens at the top)
+├── samples/
+│   └── sample-article.html     # Template for an individual writing sample
+├── assets/                     # Put resume.pdf, images, etc. here
+└── .nojekyll                   # Serve files as-is on GitHub Pages
 ```
 
-## Sections
+## Publishing on GitHub Pages
 
-The fixed sidebar links to four anchored sections in `index.html`:
+1. Push this repo to GitHub. For a user site, name it `<username>.github.io`.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to *Deploy from a branch*, branch `main`, folder `/ (root)`.
+4. Wait a minute, then open `https://<username>.github.io`.
 
-| Section | Anchor | What goes here |
-| --- | --- | --- |
-| About Me | `#about` | Intro, approach, tools you work with |
-| Resume & Experience | `#resume` | Roles, education, certifications |
-| Technical Writing Samples | `#samples` | Selected work with audience and format |
-| Contact | `#contact` | Email and profile links |
+To preview locally, open `index.html` in a browser, or run `python3 -m http.server` and visit
+`http://localhost:8000`.
 
-## Customizing
+## Making it yours
 
-1. **Content** — edit `index.html`. Everything is placeholder text; replace the
-   name, roles, samples, and contact details.
-2. **Colors and spacing** — edit the custom properties under `1. Tokens` in
-   `css/style.css`. `--accent` sets the link/hover color, `--measure` sets the
-   reading width, `--sidebar-width` sets the sidebar.
-3. **Dark mode** — follows the visitor's system setting via
-   `prefers-color-scheme`; override the values in that block to retune it.
-4. **Resume PDF** — the About section links to `resume.pdf` at the repo root.
-   Drop your file there or remove the link.
-5. **Samples** — each sample's title links to `#samples` as a placeholder. Point
-   it at a live doc, a PDF, or a subpage.
+Search for these placeholders and replace them everywhere they appear:
 
-## Behavior
+| Placeholder | Where |
+| --- | --- |
+| `Your Name` | `index.html`, `samples/sample-article.html` (title, sidebar, footer) |
+| `YN` | Sidebar avatar initials |
+| `you@example.com` | Sidebar, Contact section |
+| `your-handle` | LinkedIn and GitHub links |
+| `Company Name`, dates, bullets | Resume timeline in `index.html` |
+| `assets/resume.pdf` | Add your PDF at that path, or remove the links |
 
-- Responsive: the sidebar becomes a horizontal nav bar under 48rem.
-- Accessible: skip link, visible focus rings, semantic landmarks.
-- Honors `prefers-reduced-motion` and includes a print stylesheet that drops the
-  sidebar.
+### Adding a writing sample
 
-## Local preview
+1. Copy `samples/sample-article.html` to `samples/your-title.html`.
+2. Replace the title, facts list, and body.
+3. Add a matching `<li class="sample">` block to the Samples section of `index.html`.
 
-Open `index.html` in a browser, or:
+If the sample lives elsewhere (a company docs site, a PDF), just point the link at that URL
+instead of creating a page.
 
-```sh
-python3 -m http.server 8000
+### Theming
+
+Every color and key dimension is a CSS custom property at the top of `css/style.css`:
+
+```css
+:root {
+  --accent: #2f5fe0;   /* links, badges, timeline dots */
+  --bg: #ffffff;
+  --text: #16181d;
+  --sidebar-width: 17.5rem;
+  --content-max: 46rem;
+}
 ```
 
-## Deploying to GitHub Pages
+Change `--accent` and the whole site re-themes. A dark palette is already defined under
+`@media (prefers-color-scheme: dark)` and follows the visitor's system setting.
 
-Commit both files to the default branch and enable Pages in repository settings
-(Source: *Deploy from a branch*, folder: `/ (root)`).
+## Included behavior
+
+- Sticky sidebar on desktop; collapses to a wrapped nav bar under 960px.
+- Automatic light and dark themes.
+- Print stylesheet that hides the sidebar, so the page prints as a clean resume.
+- Skip link, semantic landmarks, and visible focus outlines.
+- Reduced-motion support.
+
+## Contact form note
+
+GitHub Pages serves static files only and cannot process form submissions. Use the `mailto:`
+link included in the Contact section, or point a `<form action="...">` at a hosted form service
+such as Formspree or Getform.

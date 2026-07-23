@@ -1,250 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jane Doe — Technical Writer</title>
-  <meta name="description" content="Portfolio of Jane Doe, technical writer specializing in developer documentation, API references, and user guides.">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name — Technical Writer</title>
+<meta name="description" content="Portfolio of Your Name, technical writer specializing in developer documentation, API references, and user guides.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9998;</text></svg>">
 </head>
 <body>
 
-  <a class="skip-link" href="#about">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ SIDEBAR ============ -->
-  <aside class="sidebar">
-    <header class="sidebar__identity">
-      <h1 class="sidebar__name">Jane Doe</h1>
-      <p class="sidebar__role">Technical Writer</p>
-    </header>
+<div class="layout">
 
-    <nav class="sidebar__nav" aria-label="Section navigation">
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#resume">Resume &amp; Experience</a></li>
-        <li><a href="#samples">Technical Writing Samples</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <!-- ============================= SIDEBAR ============================= -->
+  <header class="sidebar">
+    <div class="sidebar-inner">
+
+      <div class="identity">
+        <div class="avatar" aria-hidden="true">YN</div>
+        <h1 class="name">Your Name</h1>
+        <p class="role">Technical Writer &middot; Documentation Engineer</p>
+      </div>
+
+      <nav class="nav" aria-label="Section navigation">
+        <ul>
+          <li><a href="#about"><span class="nav-num">01</span> About Me</a></li>
+          <li><a href="#resume"><span class="nav-num">02</span> Resume &amp; Experience</a></li>
+          <li><a href="#samples"><span class="nav-num">03</span> Writing Samples</a></li>
+          <li><a href="#contact"><span class="nav-num">04</span> Contact Me</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social" aria-label="Elsewhere">
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+        <li><a href="https://github.com/your-handle">GitHub</a></li>
+        <li><a href="assets/resume.pdf">Resume&nbsp;PDF</a></li>
       </ul>
-    </nav>
 
-    <footer class="sidebar__footer">
-      <p>Based in Portland, OR</p>
-      <p>Available for contract work</p>
-    </footer>
-  </aside>
+    </div>
+  </header>
 
-  <!-- ============ MAIN ============ -->
-  <main class="content">
+  <!-- ============================== MAIN ============================== -->
+  <main class="content" id="main">
 
-    <!-- ---- About ---- -->
+    <!-- ---------------------------- ABOUT ---------------------------- -->
     <section id="about" class="section">
-      <p class="section__eyebrow">01 — Introduction</p>
-      <h2 class="section__title">About Me</h2>
+      <p class="eyebrow">01 &mdash; About Me</p>
+      <h2 class="section-title">I turn complex systems into documentation people actually finish reading.</h2>
 
-      <p class="lede">
-        I write documentation that helps engineers ship faster — API references,
-        SDK guides, onboarding tutorials, and the internal docs nobody else wants
-        to own.
-      </p>
+      <div class="prose">
+        <p class="lede">
+          I&rsquo;m a technical writer with <strong>X years</strong> of experience documenting
+          APIs, developer platforms, and enterprise software. I work closely with engineers
+          and product teams to ship docs that reduce support load and shorten time-to-first-success.
+        </p>
+        <p>
+          Replace this paragraph with your own story. A good opening covers three things:
+          the kind of product you document, who you write for, and the measurable difference
+          your work makes. Keep it to two short paragraphs &mdash; the samples below do the
+          real convincing.
+        </p>
+        <p>
+          Outside of docs, I care about information architecture, docs-as-code workflows,
+          and making style guides that teams voluntarily follow.
+        </p>
+      </div>
 
-      <p>
-        Over the past eight years I've worked across developer tools, fintech, and
-        infrastructure, translating complex systems into prose that respects the
-        reader's time. My approach starts with the task a person is trying to
-        complete, not the feature a team happens to have built.
-      </p>
+      <h3 class="subhead">What I write</h3>
+      <ul class="card-grid">
+        <li class="card">
+          <h4>API &amp; Developer Docs</h4>
+          <p>Reference documentation, quickstarts, SDK guides, and runnable code samples.</p>
+        </li>
+        <li class="card">
+          <h4>User Guides &amp; Help Centers</h4>
+          <p>Task-based guides, onboarding flows, and searchable knowledge bases.</p>
+        </li>
+        <li class="card">
+          <h4>Process &amp; Architecture</h4>
+          <p>Runbooks, design docs, release notes, and internal engineering handbooks.</p>
+        </li>
+        <li class="card">
+          <h4>Content Strategy</h4>
+          <p>Style guides, IA audits, terminology standards, and docs metrics.</p>
+        </li>
+      </ul>
 
-      <p>
-        I'm comfortable reading source code, running the product myself, and
-        interviewing the engineers who built it. Docs are a product surface, and I
-        treat them with the same rigor: tested examples, versioned content, and
-        feedback loops that catch drift before users do.
-      </p>
-
-      <h3 class="subhead">What I work with</h3>
-      <ul class="tag-list">
-        <li>Markdown &amp; MDX</li>
-        <li>Docs-as-code</li>
+      <h3 class="subhead">Toolkit</h3>
+      <ul class="tags">
+        <li>Markdown</li>
         <li>Git &amp; GitHub</li>
-        <li>OpenAPI</li>
-        <li>Sphinx</li>
+        <li>Docs-as-Code</li>
+        <li>OpenAPI / Swagger</li>
+        <li>MkDocs</li>
         <li>Docusaurus</li>
-        <li>DITA</li>
+        <li>Sphinx</li>
+        <li>Confluence</li>
         <li>Figma</li>
-        <li>Python</li>
-        <li>SQL</li>
+        <li>HTML &amp; CSS</li>
+        <li>DITA XML</li>
+        <li>Microsoft Style Guide</li>
       </ul>
     </section>
 
-    <!-- ---- Resume ---- -->
+    <!-- ---------------------------- RESUME --------------------------- -->
     <section id="resume" class="section">
-      <p class="section__eyebrow">02 — Background</p>
-      <h2 class="section__title">Resume &amp; Experience</h2>
+      <p class="eyebrow">02 &mdash; Resume &amp; Experience</p>
+      <h2 class="section-title">Experience</h2>
 
-      <p class="lede">
-        A summary of my roles and responsibilities.
-        <a class="inline-link" href="resume.pdf">Download the full resume (PDF)</a>.
+      <p class="section-intro">
+        A short summary of where I&rsquo;ve worked and what shipped.
+        <a class="inline-link" href="assets/resume.pdf">Download the full resume (PDF)</a>.
       </p>
 
-      <h3 class="subhead">Experience</h3>
       <ol class="timeline">
-        <li class="timeline__item">
-          <p class="timeline__date">2022 — Present</p>
-          <h4 class="timeline__role">Senior Technical Writer</h4>
-          <p class="timeline__org">Northwind Systems</p>
-          <ul class="timeline__points">
-            <li>Own the public developer documentation for a platform serving 40,000+ monthly developers.</li>
-            <li>Rebuilt the API reference on an OpenAPI-driven pipeline, cutting update lag from weeks to hours.</li>
-            <li>Established a docs style guide and review process now used by four product teams.</li>
+        <li class="timeline-item">
+          <p class="timeline-date">2023 &mdash; Present</p>
+          <h3 class="timeline-role">Senior Technical Writer</h3>
+          <p class="timeline-org">Company Name &middot; Remote</p>
+          <ul class="timeline-points">
+            <li>Owned the developer documentation for a public REST API used by N,000 developers.</li>
+            <li>Migrated 400+ legacy pages to a docs-as-code pipeline, cutting publish time from days to minutes.</li>
+            <li>Reduced documentation-related support tickets by N% in two quarters.</li>
           </ul>
         </li>
 
-        <li class="timeline__item">
-          <p class="timeline__date">2019 — 2022</p>
-          <h4 class="timeline__role">Technical Writer</h4>
-          <p class="timeline__org">Cascade Labs</p>
-          <ul class="timeline__points">
-            <li>Authored SDK guides and tutorials for three client libraries (Python, Go, JavaScript).</li>
-            <li>Ran a documentation audit that retired 200+ stale pages and reduced support tickets by 18%.</li>
-            <li>Partnered with support to turn recurring tickets into a troubleshooting knowledge base.</li>
+        <li class="timeline-item">
+          <p class="timeline-date">2021 &mdash; 2023</p>
+          <h3 class="timeline-role">Technical Writer</h3>
+          <p class="timeline-org">Company Name &middot; City, Country</p>
+          <ul class="timeline-points">
+            <li>Wrote quickstarts and SDK guides for three client libraries (Python, JavaScript, Go).</li>
+            <li>Introduced a shared style guide and review checklist adopted across four product teams.</li>
+            <li>Partnered with support to turn the top 20 recurring questions into permanent docs.</li>
           </ul>
         </li>
 
-        <li class="timeline__item">
-          <p class="timeline__date">2017 — 2019</p>
-          <h4 class="timeline__role">Documentation Specialist</h4>
-          <p class="timeline__org">Meridian Software</p>
-          <ul class="timeline__points">
-            <li>Migrated a legacy help center into a docs-as-code workflow on Git.</li>
-            <li>Wrote release notes and internal runbooks for a 60-person engineering org.</li>
+        <li class="timeline-item">
+          <p class="timeline-date">2019 &mdash; 2021</p>
+          <h3 class="timeline-role">Documentation Specialist</h3>
+          <p class="timeline-org">Company Name &middot; City, Country</p>
+          <ul class="timeline-points">
+            <li>Produced user guides, release notes, and in-app help for a B2B SaaS platform.</li>
+            <li>Ran usability reviews on onboarding docs and rewrote flows based on findings.</li>
           </ul>
         </li>
       </ol>
 
-      <h3 class="subhead">Education</h3>
-      <ol class="timeline">
-        <li class="timeline__item">
-          <p class="timeline__date">2013 — 2017</p>
-          <h4 class="timeline__role">B.A., English &amp; Computer Science</h4>
-          <p class="timeline__org">University of Oregon</p>
-        </li>
-      </ol>
-
-      <h3 class="subhead">Certifications</h3>
-      <ul class="plain-list">
-        <li>Google Technical Writing One &amp; Two</li>
-        <li>Certified Professional Technical Communicator (CPTC), Foundation</li>
-      </ul>
+      <div class="split">
+        <div>
+          <h3 class="subhead">Education</h3>
+          <ul class="plain-list">
+            <li>
+              <strong>B.A. / B.S. in Your Field</strong><br>
+              University Name &middot; Year
+            </li>
+            <li>
+              <strong>Certificate in Technical Communication</strong><br>
+              Institution Name &middot; Year
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="subhead">Selected highlights</h3>
+          <ul class="plain-list">
+            <li><strong>Docs platform migration</strong><br>Led a cross-team move to Docusaurus with zero broken inbound links.</li>
+            <li><strong>Style guide adoption</strong><br>Authored a 30-page guide now used as the company standard.</li>
+            <li><strong>Speaking</strong><br>Talk title, Conference Name, Year.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- ---- Samples ---- -->
+    <!-- ---------------------------- SAMPLES -------------------------- -->
     <section id="samples" class="section">
-      <p class="section__eyebrow">03 — Selected Work</p>
-      <h2 class="section__title">Technical Writing Samples</h2>
+      <p class="eyebrow">03 &mdash; Technical Writing Samples</p>
+      <h2 class="section-title">Selected work</h2>
 
-      <p class="lede">
-        A cross-section of the formats I work in. Each entry notes the audience and
-        the problem the document was written to solve.
+      <p class="section-intro">
+        Each sample lists the audience, the problem, and my role. Swap these placeholders for
+        your own pieces &mdash; link to a live doc, a PDF, or a page like
+        <a class="inline-link" href="samples/sample-article.html">this in-repo sample</a>.
       </p>
 
-      <ul class="samples">
+      <ul class="sample-list">
         <li class="sample">
-          <p class="sample__type">API Reference</p>
-          <h3 class="sample__title"><a href="#samples">Payments API — Endpoint Reference</a></h3>
-          <p class="sample__summary">
-            A complete reference for a REST payments API, generated from OpenAPI and
-            hand-edited for clarity. Includes request/response examples in four
-            languages and a full error-code table.
+          <div class="sample-meta">
+            <span class="badge">API Reference</span>
+            <span class="sample-year">2025</span>
+          </div>
+          <h3 class="sample-title">
+            <a href="samples/sample-article.html">Authenticating with the Payments API</a>
+          </h3>
+          <p class="sample-desc">
+            A reference page covering OAuth 2.0 flows, token lifetimes, and error handling,
+            with runnable cURL and Python examples for each step.
           </p>
-          <p class="sample__meta">Audience: backend engineers · 40 pages · Docusaurus</p>
+          <p class="sample-detail"><strong>Audience:</strong> Backend developers integrating a third-party API.</p>
+          <p class="sample-detail"><strong>Role:</strong> Sole author &mdash; research, drafting, engineering review, publication.</p>
+          <ul class="tags tags-sm">
+            <li>OpenAPI</li><li>Markdown</li><li>Code samples</li>
+          </ul>
         </li>
 
         <li class="sample">
-          <p class="sample__type">Tutorial</p>
-          <h3 class="sample__title"><a href="#samples">Getting Started with the Go SDK</a></h3>
-          <p class="sample__summary">
-            A 20-minute quickstart taking a developer from install to first
-            successful call, with every snippet tested in CI so examples never rot.
+          <div class="sample-meta">
+            <span class="badge">Quickstart</span>
+            <span class="sample-year">2024</span>
+          </div>
+          <h3 class="sample-title">
+            <a href="samples/sample-article.html">Getting started in under five minutes</a>
+          </h3>
+          <p class="sample-desc">
+            An onboarding guide that takes a new user from install to first successful request,
+            rebuilt around a single happy path after usability testing.
           </p>
-          <p class="sample__meta">Audience: new users · 8 pages · Markdown</p>
+          <p class="sample-detail"><strong>Audience:</strong> First-time users evaluating the product.</p>
+          <p class="sample-detail"><strong>Result:</strong> Time-to-first-request dropped from 22 minutes to 6.</p>
+          <ul class="tags tags-sm">
+            <li>Onboarding</li><li>User testing</li><li>Docusaurus</li>
+          </ul>
         </li>
 
         <li class="sample">
-          <p class="sample__type">Conceptual Guide</p>
-          <h3 class="sample__title"><a href="#samples">How Replication Works</a></h3>
-          <p class="sample__summary">
-            An explainer covering the consistency model of a distributed datastore,
-            written with the engineering team and illustrated with sequence diagrams.
+          <div class="sample-meta">
+            <span class="badge">Runbook</span>
+            <span class="sample-year">2024</span>
+          </div>
+          <h3 class="sample-title">
+            <a href="samples/sample-article.html">Incident response runbook: database failover</a>
+          </h3>
+          <p class="sample-desc">
+            A step-by-step operational procedure written with the on-call team, including
+            decision trees, rollback steps, and escalation paths.
           </p>
-          <p class="sample__meta">Audience: platform engineers · 12 pages · Sphinx</p>
+          <p class="sample-detail"><strong>Audience:</strong> On-call SREs during a live incident.</p>
+          <p class="sample-detail"><strong>Role:</strong> Interviewed four engineers, drafted, and ran a tabletop review.</p>
+          <ul class="tags tags-sm">
+            <li>SRE</li><li>Procedures</li><li>Confluence</li>
+          </ul>
         </li>
 
         <li class="sample">
-          <p class="sample__type">User Guide</p>
-          <h3 class="sample__title"><a href="#samples">Admin Console Handbook</a></h3>
-          <p class="sample__summary">
-            Task-based documentation for non-technical administrators, covering user
-            provisioning, permissions, and audit logs.
+          <div class="sample-meta">
+            <span class="badge">Concept Guide</span>
+            <span class="sample-year">2023</span>
+          </div>
+          <h3 class="sample-title">
+            <a href="samples/sample-article.html">How our permissions model works</a>
+          </h3>
+          <p class="sample-desc">
+            An explainer that untangles roles, scopes, and inheritance for a complex
+            access-control system, with diagrams and worked examples.
           </p>
-          <p class="sample__meta">Audience: IT administrators · 30 pages · DITA</p>
-        </li>
-
-        <li class="sample">
-          <p class="sample__type">Release Notes</p>
-          <h3 class="sample__title"><a href="#samples">Platform 4.0 Migration Notes</a></h3>
-          <p class="sample__summary">
-            Breaking-change documentation for a major version bump, including a
-            step-by-step upgrade path and a deprecation timeline.
-          </p>
-          <p class="sample__meta">Audience: existing customers · 6 pages · Markdown</p>
-        </li>
-
-        <li class="sample">
-          <p class="sample__type">Internal Process</p>
-          <h3 class="sample__title"><a href="#samples">Documentation Style Guide</a></h3>
-          <p class="sample__summary">
-            The voice, tone, and formatting standard adopted across four product
-            teams, with a linting configuration that enforces the mechanical rules.
-          </p>
-          <p class="sample__meta">Audience: engineers &amp; writers · 15 pages · Markdown</p>
+          <p class="sample-detail"><strong>Audience:</strong> Admins and solution architects.</p>
+          <p class="sample-detail"><strong>Role:</strong> Author and information architect.</p>
+          <ul class="tags tags-sm">
+            <li>IA</li><li>Diagrams</li><li>Explainer</li>
+          </ul>
         </li>
       </ul>
     </section>
 
-    <!-- ---- Contact ---- -->
+    <!-- ---------------------------- CONTACT -------------------------- -->
     <section id="contact" class="section">
-      <p class="section__eyebrow">04 — Get in Touch</p>
-      <h2 class="section__title">Contact</h2>
+      <p class="eyebrow">04 &mdash; Contact Me</p>
+      <h2 class="section-title">Let&rsquo;s work together</h2>
 
-      <p class="lede">
-        I'm open to contract documentation projects, docs audits, and full-time
-        roles. The fastest way to reach me is email.
+      <p class="section-intro">
+        I&rsquo;m open to full-time roles, contract documentation projects, and docs audits.
+        The fastest way to reach me is email &mdash; I reply within two business days.
       </p>
 
-      <dl class="contact-list">
-        <dt>Email</dt>
-        <dd><a href="mailto:hello@example.com">hello@example.com</a></dd>
+      <ul class="contact-grid">
+        <li class="contact-card">
+          <p class="contact-label">Email</p>
+          <a class="contact-value" href="mailto:you@example.com">you@example.com</a>
+        </li>
+        <li class="contact-card">
+          <p class="contact-label">LinkedIn</p>
+          <a class="contact-value" href="https://www.linkedin.com/in/your-handle">/in/your-handle</a>
+        </li>
+        <li class="contact-card">
+          <p class="contact-label">GitHub</p>
+          <a class="contact-value" href="https://github.com/your-handle">@your-handle</a>
+        </li>
+        <li class="contact-card">
+          <p class="contact-label">Location</p>
+          <span class="contact-value">City, Country &middot; Remote-friendly</span>
+        </li>
+      </ul>
 
-        <dt>LinkedIn</dt>
-        <dd><a href="https://www.linkedin.com/">linkedin.com/in/janedoe</a></dd>
-
-        <dt>GitHub</dt>
-        <dd><a href="https://github.com/">github.com/janedoe</a></dd>
-
-        <dt>Location</dt>
-        <dd>Portland, Oregon — remote friendly</dd>
-      </dl>
-
-      <p class="note">
-        For writing samples under NDA, ask and I'll share a redacted version.
+      <p class="callout">
+        <strong>Note on the contact form:</strong> GitHub Pages serves static files only, so a
+        plain HTML <code>&lt;form&gt;</code> cannot process submissions on its own. Use a
+        <code>mailto:</code> link like the one above, or point the form's <code>action</code> at
+        a hosted form service.
       </p>
-
-      <footer class="page-footer">
-        <p>&copy; 2026 Jane Doe. Built with HTML and CSS.</p>
-      </footer>
     </section>
+
+    <footer class="footer">
+      <p>&copy; <span>2026</span> Your Name. Built with HTML and CSS, hosted on GitHub Pages.</p>
+      <p><a class="inline-link" href="#main">Back to top</a></p>
+    </footer>
 
   </main>
+</div>
 
 </body>
 </html>

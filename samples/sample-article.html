@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authenticating with the Payments API — Your Name</title>
+<meta name="description" content="Sample technical writing: an API authentication reference covering OAuth 2.0 flows, token lifetimes, and error handling.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9998;</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="layout">
+
+  <header class="sidebar">
+    <div class="sidebar-inner">
+
+      <div class="identity">
+        <div class="avatar" aria-hidden="true">YN</div>
+        <h1 class="name">Your Name</h1>
+        <p class="role">Technical Writer &middot; Documentation Engineer</p>
+      </div>
+
+      <nav class="nav" aria-label="Section navigation">
+        <ul>
+          <li><a href="../index.html#about"><span class="nav-num">01</span> About Me</a></li>
+          <li><a href="../index.html#resume"><span class="nav-num">02</span> Resume &amp; Experience</a></li>
+          <li><a href="../index.html#samples"><span class="nav-num">03</span> Writing Samples</a></li>
+          <li><a href="../index.html#contact"><span class="nav-num">04</span> Contact Me</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social" aria-label="Elsewhere">
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+        <li><a href="https://github.com/your-handle">GitHub</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+  <main class="content" id="main">
+    <article class="article">
+
+      <a class="back-link" href="../index.html#samples">&larr; All writing samples</a>
+
+      <p class="eyebrow">API Reference &middot; 2025</p>
+      <h2 class="article-title">Authenticating with the Payments API</h2>
+      <p class="article-sub">
+        How to obtain, use, and refresh an access token for the Payments API.
+      </p>
+
+      <ul class="article-facts">
+        <li><strong>Audience:</strong> Backend developers integrating a third-party payments API.</li>
+        <li><strong>Goal:</strong> Make a first authenticated request within ten minutes.</li>
+        <li><strong>My role:</strong> Sole author &mdash; research, drafting, engineering review, publication.</li>
+        <li><strong>Tools:</strong> Markdown, OpenAPI, Git, Docusaurus.</li>
+      </ul>
+
+      <div class="article-body">
+
+        <p>
+          Every request to the Payments API must include a valid access token. This page
+          explains how to exchange your client credentials for a token, attach it to requests,
+          and handle expiry. Replace this whole page with one of your own samples &mdash; the
+          structure below is a reusable skeleton for reference documentation.
+        </p>
+
+        <h2>Before you begin</h2>
+        <p>You need the following:</p>
+        <ul>
+          <li>A merchant account with API access enabled.</li>
+          <li>A client ID and client secret from the <strong>Developers &rarr; Credentials</strong> page.</li>
+          <li>An HTTPS-capable client. Plain HTTP requests are rejected.</li>
+        </ul>
+
+        <p class="note">
+          <strong>Note:</strong> Sandbox and production use separate credentials. A sandbox
+          secret will return <code>401 invalid_client</code> against the production host.
+        </p>
+
+        <h2>Step 1 &mdash; Request an access token</h2>
+        <p>
+          Send your credentials to the token endpoint using the
+          <code>client_credentials</code> grant.
+        </p>
+
+<pre><code>curl -X POST https://api.example.com/oauth/token \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials" \
+  -d "client_id=$CLIENT_ID" \
+  -d "client_secret=$CLIENT_SECRET" \
+  -d "scope=payments.read payments.write"</code></pre>
+
+        <p>A successful request returns <code>200 OK</code>:</p>
+
+<pre><code>{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6...",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "scope": "payments.read payments.write"
+}</code></pre>
+
+        <h2>Step 2 &mdash; Call the API</h2>
+        <p>
+          Include the token in the <code>Authorization</code> header of every request.
+        </p>
+
+<pre><code>curl https://api.example.com/v1/payments \
+  -H "Authorization: Bearer $ACCESS_TOKEN"</code></pre>
+
+        <h2>Step 3 &mdash; Refresh before expiry</h2>
+        <p>
+          Tokens are valid for one hour. Cache the token and request a new one when fewer than
+          five minutes remain, rather than requesting a token per API call &mdash; the token
+          endpoint is rate-limited to 60 requests per minute per client.
+        </p>
+
+        <h2>Scopes</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Scope</th>
+                <th scope="col">Grants</th>
+                <th scope="col">Required by</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>payments.read</code></td>
+                <td>Read payments and refunds</td>
+                <td><code>GET /v1/payments</code></td>
+              </tr>
+              <tr>
+                <td><code>payments.write</code></td>
+                <td>Create and capture payments</td>
+                <td><code>POST /v1/payments</code></td>
+              </tr>
+              <tr>
+                <td><code>refunds.write</code></td>
+                <td>Issue refunds</td>
+                <td><code>POST /v1/refunds</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Error reference</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Code</th>
+                <th scope="col">Fix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>400</td>
+                <td><code>unsupported_grant_type</code></td>
+                <td>Set <code>grant_type</code> to <code>client_credentials</code>.</td>
+              </tr>
+              <tr>
+                <td>401</td>
+                <td><code>invalid_client</code></td>
+                <td>Check the credentials match the environment you are calling.</td>
+              </tr>
+              <tr>
+                <td>403</td>
+                <td><code>insufficient_scope</code></td>
+                <td>Request the scope listed for that endpoint above.</td>
+              </tr>
+              <tr>
+                <td>429</td>
+                <td><code>rate_limited</code></td>
+                <td>Cache tokens and retry after the <code>Retry-After</code> interval.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Next steps</h2>
+        <ul>
+          <li>Create your first payment.</li>
+          <li>Verify webhook signatures.</li>
+          <li>Move from sandbox to production.</li>
+        </ul>
+
+      </div>
+
+      <footer class="footer">
+        <p>&copy; <span>2026</span> Your Name. Writing sample &mdash; content is illustrative.</p>
+        <p><a class="inline-link" href="../index.html#samples">Back to samples</a></p>
+      </footer>
+
+    </article>
+  </main>
+</div>
+
+</body>
+</html>
