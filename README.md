@@ -9,9 +9,8 @@ step, no dependencies. Designed for GitHub Pages.
 .
 ├── index.html                  # Single page: About, Resume, Samples, Contact
 ├── css/style.css               # All styling (design tokens at the top)
-├── samples/
-│   └── sample-article.html     # Template for an individual writing sample
-├── assets/                     # Put resume.pdf, images, etc. here
+├── assets/                     # resume.pdf, images, etc.
+│   └── samples/                # Writing sample PDFs linked from the Samples section
 └── .nojekyll                   # Serve files as-is on GitHub Pages
 ```
 
@@ -31,7 +30,7 @@ Search for these placeholders and replace them everywhere they appear:
 
 | Placeholder | Where |
 | --- | --- |
-| `Your Name` | `index.html`, `samples/sample-article.html` (title, sidebar, footer) |
+| `Your Name` | `index.html` (title, sidebar, footer) |
 | `YN` | Sidebar avatar initials |
 | `you@example.com` | Sidebar, Contact section |
 | `your-handle` | LinkedIn and GitHub links |
@@ -58,10 +57,8 @@ Each sample card's title links to a PDF in `assets/samples/`, which opens in a n
 The `sample-ext` span is the small file-type marker beside the title. Change it to `HTML` or
 `DOCX` to match, or delete it if the link goes to a live page.
 
-For a web-native sample instead of a PDF, copy `samples/sample-article.html` to
-`samples/your-title.html`, replace its title, facts list, and body, and point the card's title
-at that page (dropping `target`/`rel`, since it stays on the site). If the sample lives on a
-company docs site, just point the `href` at that URL.
+If a sample lives on a company docs site or another URL, just point the `href` at that URL
+instead of a local file (dropping `target="_blank"` only if you want it to open in the same tab).
 
 ### Adding PDFs and other files
 
@@ -91,12 +88,13 @@ Every color and key dimension is a CSS custom property at the top of `css/style.
 
 ```css
 :root {
-  --accent: #1f5f3f;       /* forest green — links, badges, timeline dots */
-  --bg: #ffffff;           /* content background */
-  --bg-soft: #f7f5f0;      /* cards, code blocks, callouts */
-  --text: #1a1a17;
-  --sidebar-bg: #efeae0;   /* cream sidebar block */
-  --sidebar-border: #ded7c9;
+  --accent: #7b4b2a;       /* coffee / mocha — links, badges, timeline dots */
+  --bg: #fbf7f1;           /* latte foam — content background */
+  --bg-soft: #f3e9dc;      /* steamed milk — cards, code blocks */
+  --text: #2b1d13;         /* espresso */
+  --on-accent: #ffffff;    /* text on accent surfaces (avatar, skip link) */
+  --sidebar-bg: #ece0cf;   /* café au lait sidebar block */
+  --sidebar-border: #d8c6b0;
   --sidebar-width: 17.5rem;
   --content-max: 46rem;
 }
@@ -107,8 +105,10 @@ independently, so you can make it a bold block without touching the content area
 `--sidebar-bg` to your accent and `--sidebar-text` / `--sidebar-muted` to a light color for an
 inverted sidebar.
 
-A dark palette is defined under `@media (prefers-color-scheme: dark)` and follows the visitor's
-system setting. It keeps a dark sidebar on purpose — a cream block would glare in dark mode.
+A dark-roast palette is defined under `@media (prefers-color-scheme: dark)` and follows the
+visitor's system setting. It keeps a dark sidebar on purpose — a light block would glare in dark
+mode. Note `--on-accent`: in light mode the accent is dark so this is white; in dark mode the
+accent is a light caramel, so it flips to espresso to keep the avatar and skip-link readable.
 
 ## Included behavior
 

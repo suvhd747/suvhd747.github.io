@@ -9,18 +9,20 @@
    colour the sidebar block on its own, so it can differ from the content.  */
 
 :root {
-  --bg:            #ffffff;
-  --bg-soft:       #f7f5f0;
-  --text:          #1a1a17;
-  --text-muted:    #5d5c55;
-  --border:        #e6e1d8;
-  --accent:        #1f5f3f;  /* forest green — try #14532d deeper, #2c6e49 brighter */
+  /* Coffee theme — latte surfaces, espresso ink, mocha accent. */
+  --bg:            #fbf7f1;  /* latte foam */
+  --bg-soft:       #f3e9dc;  /* steamed milk */
+  --text:          #2b1d13;  /* espresso */
+  --text-muted:    #6d5647;  /* roasted brown */
+  --border:        #e4d6c4;  /* light crema */
+  --accent:        #7b4b2a;  /* coffee / mocha — try #5f3a20 deeper, #8f5c34 brighter */
+  --on-accent:     #ffffff;  /* text on an accent-filled surface (avatar, skip link) */
 
   /* Sidebar is its own colour block, independent of the content surfaces. */
-  --sidebar-bg:     #efeae0;  /* off-white cream — try #f2eee6 lighter, #eee8dc deeper */
+  --sidebar-bg:     #ece0cf;  /* café au lait — try #f0e6d8 lighter, #e4d5bf deeper */
   --sidebar-text:   var(--text);
   --sidebar-muted:  var(--text-muted);
-  --sidebar-border: #ded7c9;
+  --sidebar-border: #d8c6b0;
 
   --sidebar-width: 17.5rem;
   --content-max:   46rem;
@@ -34,16 +36,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:         #101215;
-    --bg-soft:    #17191c;
-    --text:       #e9e8e3;
-    --text-muted: #9d9c95;
-    --border:     #282a2c;
-    --accent:     #86c39d;  /* lightened green — forest green is too dark on a dark bg */
+    /* Dark roast — espresso surfaces, cream ink, latte accent. */
+    --bg:         #1c140f;  /* dark roast */
+    --bg-soft:    #241a13;  /* wet grounds */
+    --text:       #f0e6da;  /* cream */
+    --text-muted: #b3a191;  /* café au lait */
+    --border:     #35291f;
+    --accent:     #c89a6a;  /* latte / caramel — light enough to read on the dark roast */
+    --on-accent:  #241a13;  /* dark ink on the light accent (avatar, skip link) */
 
     /* Dark mode keeps a dark sidebar; a cream block here would glare. */
-    --sidebar-bg:     #191b1d;
-    --sidebar-border: #2c2f31;
+    --sidebar-bg:     #17100b;
+    --sidebar-border: #33271d;
   }
 }
 
@@ -110,7 +114,7 @@ code {
   top: 0;
   z-index: 100;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   padding: 0.6rem 1rem;
   border-radius: 0 0 var(--radius) 0;
   text-decoration: none;
@@ -154,7 +158,7 @@ code {
   place-items: center;
   border-radius: 50%;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.04em;
