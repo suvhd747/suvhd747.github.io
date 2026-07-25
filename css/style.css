@@ -438,6 +438,29 @@ code {
 .sample-title a { text-decoration: none; }
 .sample-title a:hover { color: var(--accent); }
 
+/* File-type marker on a sample title, so the link telegraphs that it opens
+   a PDF in a new tab rather than navigating within the site. */
+.sample-ext {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  vertical-align: 0.1em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.sample-title a:hover .sample-ext {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
 .sample-desc {
   font-size: 0.93rem;
   color: var(--text-muted);

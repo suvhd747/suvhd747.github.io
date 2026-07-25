@@ -40,12 +40,28 @@ Search for these placeholders and replace them everywhere they appear:
 
 ### Adding a writing sample
 
-1. Copy `samples/sample-article.html` to `samples/your-title.html`.
-2. Replace the title, facts list, and body.
-3. Add a matching `<li class="sample">` block to the Samples section of `index.html`.
+Each sample card's title links to a PDF in `assets/samples/`, which opens in a new tab:
 
-If the sample lives elsewhere (a company docs site, a PDF), just point the link at that URL
-instead of creating a page.
+1. Commit the PDF to `assets/samples/` using a lowercase-with-hyphens filename.
+2. Copy a `<li class="sample">` block in the Samples section of `index.html`.
+3. Update the `href` to match the filename exactly, plus the badge, year, title, description,
+   audience/role lines, and tags.
+
+```html
+<h3 class="sample-title">
+  <a href="assets/samples/your-sample.pdf" target="_blank" rel="noopener">
+    Your sample title<span class="sample-ext">PDF</span>
+  </a>
+</h3>
+```
+
+The `sample-ext` span is the small file-type marker beside the title. Change it to `HTML` or
+`DOCX` to match, or delete it if the link goes to a live page.
+
+For a web-native sample instead of a PDF, copy `samples/sample-article.html` to
+`samples/your-title.html`, replace its title, facts list, and body, and point the card's title
+at that page (dropping `target`/`rel`, since it stays on the site). If the sample lives on a
+company docs site, just point the `href` at that URL.
 
 ### Adding PDFs and other files
 
