@@ -7,7 +7,6 @@ lowercase-with-hyphens and no spaces.
 Currently linked from index.html:
 
   target-product-profile.pdf
-  risk-management-plan.pdf
   informed-consent-form.pdf
   quality-manual.pdf
 
